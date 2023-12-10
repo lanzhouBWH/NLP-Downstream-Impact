@@ -1,0 +1,43 @@
+#!/bin/bash
+#BSUB -J BMI_code[1-500]
+#BSUB -o output/BMI_code-%J-%I.out
+#BSUB -e output/BMI_code-%J-%I.err
+#BSUB -q bigmem
+#BSUB -n 1
+#BSUB -R rusage[mem=32000]
+
+echo '---PROCESS RESOURCE LIMITS---'
+ulimit -a
+echo '---SHARED LIBRARY PATH---'
+echo $LD_LIBRARY_PATH
+echo '---APPLICATION SEARCH PATH:---'
+echo $PATH
+echo '---LSF Parameters:---'
+printenv | grep '^LSF'
+echo '---LSB Parameters:---'
+printenv | grep '^LSB'
+echo '---LOADED MODULES:---'
+module list
+echo '---SHELL:---'
+echo $SHELL
+echo '---HOSTNAME:---'
+hostname
+echo '---MPICH_INTERFACE_HOSTNAME---'
+echo $MPICH_INTERFACE_HOSTNAME
+echo '---GROUP MEMBERSHIP (files are created in the first group listed):---'
+groups
+echo '---DEFAULT FILE PERMISSIONS (UMASK):---'
+umask
+echo '---CURRENT WORKING DIRECTORY:---'
+pwd
+echo '---DISK SPACE QUOTA---'
+df .
+echo '---TEMPORARY SCRATCH FOLDER ($TMPDIR):---'
+echo $TMPDIR
+
+echo "LSB_JOBINDEX = $LSB_JOBINDEX "
+module load R/testversions/4.2.0
+module load gcc/9.3.0
+module load gsl/2.6
+module load cmake/3.19.2
+R --slave -f BMI_code.R
