@@ -8,10 +8,10 @@ This repository provides R codes (.R) and job scheduler codes (.lsf) for the Mon
 
 | Reference | NLP-Derived Medical Variable | Outcome | Statistical Model | PPV | NPV | Sensitivity |
 | --------- | ---------------------------- | ------- | ----------------- | --- | --- | ----------- |
-| Turchin et al., 2020 | Non-acceptance of insulin therapy by patients | Time to HbA1c < 7.0% | Propensity score weighted Cox model | 0.95 | 0.99 | 1.00 |
+| Turchin et al., 2020 | Non-acceptance of insulin therapy by patients | Time to HbA1c < 7.0% | Propensity score weighted Cox model (R package "survival" version 3.3-1 ) | 0.95 | 0.99 | 1.00 |
 | Chang et al., 2021 | Patient-provider discussions of bariatric surgery | Change in BMI | Linear mixed model | 0.76 | 0.99 | 0.89 |
-|  |  | Receipt of bariatric surgery | Logistic regression |  |  |  |
-| Brown et al., 2023 | Non-acceptance of statin therapy by patients | Time to LDL < 100 mg/dL | Cox model | 0.78 | 0.99 | 0.88 |
+|  |  | Receipt of bariatric surgery | Logistic regression (R package "stats" version 4.2.1) |  |  |  |
+| Brown et al., 2023 | Non-acceptance of statin therapy by patients | Time to LDL < 100 mg/dL | Cox model (R package "survival" version 3.3-1) | 0.78 | 0.99 | 0.88 |
 
 According to our institutional policy, we are not allowed to share patient-level data. Our code provides procedures if the readers may specify the data at their ends.
 
