@@ -21,7 +21,7 @@ a) "Codes.R": The main codes for Propensity score weighted Cox model.
 b) "Codes.lsf": The job scheduler script for "Codes.R"
 c) "Summary.R": Summarization codes for the results.
 
-### Brown et al., 2023 (BariatricSurgery)
+### Chang et al., 2021 (BariatricSurgery)
 This folder contain the codes for the Monte Carlo simulations of Chang et al., 2021 
 a) "BMI_Codes.R": The main codes for change in BMI using linear mixed model
 b) "BMI_Codes.lsf": The job scheduler script for "BMI_Codes.R"
